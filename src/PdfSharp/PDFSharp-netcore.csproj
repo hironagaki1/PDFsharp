@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>PDFSharp_netcore</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;WPF</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Forms\**" />
+    <EmbeddedResource Remove="Forms\**" />
+    <None Remove="Forms\**" />
+    <Page Remove="Forms\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Drawing.BarCodes\DataMatrixImage.opensource.cs" />
+    <Compile Remove="Windows\PagePreview-ag.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Windows\PagePreview-ag.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="4.7.1" />
+  </ItemGroup>
+
+</Project>
