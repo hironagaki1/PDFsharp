@@ -1,13 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFrameworks>netcoreapp3.1;net471</TargetFrameworks>
     <RootNamespace>PDFSharp_netcore</RootNamespace>
-    <UseWPF>true</UseWPF>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWPF>true</UseWPF> 
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
     <DefineConstants>TRACE;WPF</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'!='Debug'">
+    <DefineConstants>WPF</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
